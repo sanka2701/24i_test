@@ -19,25 +19,30 @@
 </head>
 
 <body>
-  <input id="SearchInput" placeholder="Type the searched phase">
-  <button onclick="onSearch()">Klik</button>
-  <button onclick="setPagination()">page</button>
+  <div class="header">
+      <input class="search-bar" id="SearchInput" placeholder="Type the searched phase">
+      <button class="search-button" onclick="onSearch()">Search</button>
+  </div>
+
 
   <div class="table table--2cols">
-
-    <div class="table-cell">
-      <h3 class="result-title">
-        Image Result
-      </h3>
-      <div id="ImageSearch" class="table table--3cols"></div>
+    <div class="table-cell bordered">
+      <div>
+          <h3 class="result-title">
+              Image Result
+          </h3>
+          <div id="ImageSearch" class="table table--3cols"></div>
+      </div>
     </div>
 
-    <div class="table-cell">
-      <h3>
-        Web Result
-      </h3>
-      <div id="WebSearch" class="table"></div>
-      <div id="Pagination" class="pagination"></div>
+    <div class="table-cell bordered">
+      <div>
+          <h3>
+              Web Result
+          </h3>
+          <div id="WebSearch" class="table"></div>
+          <div id="Pagination" class="pagination"></div>
+      </div>
     </div>
 
   </div>
