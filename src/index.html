@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/utils/constants.js"></script>
+  <script src="js/utils/rest.js"></script>
+  <script src="js/modules/result.js"></script>
+  <script src="js/modules/imgResult.js"></script>
+  <script src="js/modules/webResult.js"></script>
+  <script src="js/modules/resultSet.js"></script>
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <input id="SearchInput" placeholder="Type the searched phase">
+  <button onclick="onSearch()">Klik</button>
+  <button onclick="setPagination()">page</button>
+
+  <div class="table table--2cols">
+
+    <div class="table-cell">
+      <h3 class="result-title">
+        Image Result
+      </h3>
+      <div id="ImageSearch" class="table table--3cols"></div>
+    </div>
+
+    <div class="table-cell">
+      <h3>
+        Web Result
+      </h3>
+      <div id="WebSearch" class="table"></div>
+      <div id="Pagination" class="pagination"></div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
