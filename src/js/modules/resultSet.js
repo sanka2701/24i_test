@@ -8,13 +8,13 @@ const ResultSet = function(parentDiv, childPrototype, pageSize) {
 
     const _removeResultsFromDOM = function () {
         for(var i = 0; i< resultSet.length; i++) {
-            resultSet[i].remove();
+            resultSet[i].removeFromDom();
         }
     };
 
     const _clearResultSet = function() {
         while(resultSet.length) {
-            resultSet.shift().remove();
+            resultSet.shift().removeFromDom();
         }
     };
 

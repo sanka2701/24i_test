@@ -1,27 +1,18 @@
 'use strict';
 
-const ImgResult = function (imgLink) {
-    var imgWrapperDiv;
+function ImgResult(imgLink) {
+    this.imgWrapperDiv = document.createElement('div');
 
     const _init = function () {
         var imgElement = document.createElement('img');
         imgElement.setAttribute('src', imgLink);
 
-        imgWrapperDiv = document.createElement('div');
-        imgWrapperDiv.className = 'table-cell';
-        imgWrapperDiv.appendChild(imgElement);
-    }();
+        this.imgWrapperDiv.className = 'table-cell';
+        this.imgWrapperDiv.appendChild(imgElement);
+    }.bind(this)();
 
-    const getElement = function () {
-        return imgWrapperDiv;
-    };
+    Result.call(this, this.imgWrapperDiv);
+}
 
-    const remove = function () {
-        imgWrapperDiv.remove();
-    };
-
-    return {
-        getElement : getElement,
-        remove     : remove
-    }
-};
+ImgResult.prototype = Object.create(Result.prototype);
+ImgResult.prototype.constructor = ImgResult;

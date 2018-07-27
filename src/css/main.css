@@ -26,8 +26,9 @@
 .table-cell img {
     width: 100%;
     height: 100%;
-    object-fit: none;
-    object-position: 50% 50%;
+    object-fit: cover;
+    /*object-fit: none;*/
+    /*object-position: 50% 50%;*/
 }
 
 .table .pagination {
@@ -36,29 +37,44 @@
 }
 
 .table .pagination .page-index {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    cursor: pointer;
 }
 
 .header {
+    font-family: Times, Helvetica, serif;
+    font-weight: bold;
+    height: 2.5vw;
     display: flex;
 }
 
 .header .search-bar {
+    font-family: inherit;
+    font-weight: inherit;
     border: 2px #666666 solid;
     border-radius: 15px;
-    margin-right: 5px;
+    margin-right: 0.5em;
     width: 80%;
+    text-indent: 2em;
 }
 
 .header .search-button {
+    font-family: inherit;
+    font-weight: inherit;
     border: 2px #666666 solid;
+    background-color: #999999;
     border-radius: 15px;
-    margin-left: 5px;
+    margin-left: 0.8em;
     width: 20%;
+    transition: 0.25s;
 }
 
+.header .search-button:hover {
+    background-color: #008CBA;
+}
 .result-title {
+    margin-left: 1em;
     box-sizing: border-box;
     flex-grow: 1;
     width: 100% !important;
@@ -67,8 +83,9 @@
 .bordered {
     border: 2px #666666 solid;
     border-radius: 15px;
+    height: 100%;
 }
 
-.spaced {
-    margin: 10px;
+.spacer {
+    padding: 0.8em 1.2em;
 }

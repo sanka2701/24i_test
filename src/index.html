@@ -19,34 +19,38 @@
 </head>
 
 <body>
-  <div class="header">
-      <input class="search-bar" id="SearchInput" placeholder="Type the searched phase">
-      <button class="search-button" onclick="onSearch()">Search</button>
-  </div>
-
-
-  <div class="table table--2cols">
-    <div class="table-cell bordered">
-      <div>
-          <h3 class="result-title">
-              Image Result
-          </h3>
-          <div id="ImageSearch" class="table table--3cols"></div>
-      </div>
+    <div class="spacer">
+        <div class="header">
+            <input class="search-bar" id="SearchInput" placeholder="Type in the searched phase">
+            <button class="search-button" onclick="onSearch()">Search</button>
+        </div>
     </div>
 
-    <div class="table-cell bordered">
-      <div>
-          <h3>
-              Web Result
-          </h3>
-          <div id="WebSearch" class="table"></div>
-          <div id="Pagination" class="pagination"></div>
-      </div>
+    <div class="table table--2cols">
+        <div class="table-cell ">
+            <div class="bordered">
+                <div>
+                    <h3 class="result-title">
+                      Image Result
+                    </h3>
+                    <div id="ImageSearch" class="table table--3cols"></div>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="table-cell ">
+        <div class="bordered">
+            <div>
+                <h3 class="result-title">
+                  Web Result
+                </h3>
+                <div id="WebSearch" class="table"></div>
+                <div id="Pagination" class="pagination"></div>
+            </div>
+        </div>
     </div>
-
   </div>
-
 </body>
 
 </html>

@@ -10,12 +10,6 @@ window.addEventListener("DOMContentLoaded", function() {
   webResultSet = new ResultSet(document.getElementById(Constants.WEB_RESULT_DIV_ID), WebResult, Constants.WEB_PER_PAGE)
 }, false);
 
-document.getElementById(Constants.SEARCH_INPUT_ID).onkeydown = function(event) {
-    if (event && event.keyCode === 13) {
-        onSearch();
-    }
-};
-
 function onSearch() {
   const inputValue = document.getElementById(Constants.SEARCH_INPUT_ID).value;
   if(inputValue) {
@@ -42,15 +36,15 @@ function preProcessWebResult(items) {
 
 function removePagination() {
     const indexes = document.getElementById(Constants.PAGINATION_DIV_ID).getElementsByClassName('page-index');
-    while (indexes.length > 0) {
-        indexes.shift().remove();
+    while (indexes.length) {
+        indexes[0].remove();
     }
 }
 
 function addWebResultPagination(pageCount) {
     const paginationDiv = document.getElementById(Constants.PAGINATION_DIV_ID);
 
-    for(var i = 0; i< pageCount; i++) {
+    for(var i = 0; i < pageCount; i++) {
         var pageIndex = document.createElement('a');
         pageIndex.innerText = i + 1;
         pageIndex.className = 'page-index';

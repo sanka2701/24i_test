@@ -1,9 +1,9 @@
 'use strict';
 
-var WebResult = function (data) {
-    var webWrapperDiv;
+function WebResult(data) {
+    this.wrapper = document.createElement('div');
 
-    const init = function() {
+    const _init = function () {
         var pageLink = data.formattedUrl;
         var snippet  = data.snippet;
         var title    = data.title;
@@ -18,50 +18,14 @@ var WebResult = function (data) {
         var snippetElement = document.createElement('div');
         snippetElement.innerText = snippet;
 
-        webWrapperDiv = document.createElement('div');
-        webWrapperDiv.className = 'table-cell';
-        webWrapperDiv.appendChild(titleElement);
-        webWrapperDiv.appendChild(linkElement);
-        webWrapperDiv.appendChild(snippetElement);
-    }();
+        this.wrapper.className = 'table-cell';
+        this.wrapper.appendChild(titleElement);
+        this.wrapper.appendChild(linkElement);
+        this.wrapper.appendChild(snippetElement);
+    }.bind(this)();
 
-    const getElement = function () {
-        return webWrapperDiv;
-    };
+    Result.call(this, this.wrapper);
+}
 
-    const remove = function () {
-        webWrapperDiv.remove();
-    };
-
-    return {
-        getElement : getElement,
-        remove     : remove
-    }
-};
-
-// function WebResult(data) {
-//     Result.call(document.createElement('div'));
-//
-//     const init = function () {
-//         var pageLink = data.formattedUrl;
-//         var snippet  = data.snippet;
-//         var title    = data.title;
-//
-//         var titleElement = document.createElement('h4');
-//         titleElement.innerText = title;
-//
-//         var linkElement  = document.createElement('a');
-//         linkElement.innerText  = pageLink;
-//         linkElement.setAttribute('href', pageLink);
-//
-//         var snippetElement = document.createElement('div');
-//         snippetElement.innerText = snippet;
-//
-//         this.wrapper.className = 'table-cell';
-//         this.wrapper.appendChild(titleElement);
-//         this.wrapper.appendChild(linkElement);
-//         this.wrapper.appendChild(snippetElement);
-//     }.bind(this)()
-// }
-//
-// WebResult.prototype = Object.create(Result);
+WebResult.prototype = Object.create(Result.prototype);
+WebResult.prototype.constructor = WebResult;
